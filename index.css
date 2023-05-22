@@ -55,3 +55,25 @@ nav .navbar__toggler .bar {
   border-radius: 10%;
   transition: 0.4s;
 }
+input {
+  display: none;
+}
+
+input:checked ~ nav .navbar__list {
+  transform: translateY(0);
+}
+
+input:checked ~ nav .navbar__toggler {
+  margin-top: 35px;
+}
+input:checked ~ nav .navbar__toggler .bar:nth-child(1) {
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+input:checked ~ nav .navbar__toggler .bar:nth-child(2) {
+  display: none;
+}
+input:checked ~ nav .navbar__toggler .bar:nth-child(3) {
+  transform: rotate(-45deg);
+}
