@@ -10,14 +10,20 @@
 nav {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
   padding: 0 15%;
-  height: 75px;
+  height: 100px;
   line-height: 75px;
-  background: #404040;
+  background-color: #fafafa;
 }
-
+.navbar__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 nav .navbar__brand {
-  color: #ffff;
+  color: #101010;
   font-size: 28px;
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -37,7 +43,7 @@ nav .navbar__list .navbar__list-item:hover {
   background: #b69955;
 }
 nav .navbar__list .navbar__list-item a {
-  color: #f1f1f1;
+  color: #101010;
   font-size: 18px;
   font-weight: 500;
 }
@@ -47,34 +53,52 @@ nav .navbar__toggler {
   margin: 18px -10px 0 0;
   cursor: pointer;
 }
+
+.navbar__btn {
+  font-size: 20px;
+  text-align: center;
+  align-content: center;
+  background: #2549d3;
+  border-radius: 15px;
+  border: 1px solid #b69955;
+  outline: none;
+  color: #fafafa;
+  font-weight: 600;
+  padding: 10px;
+}
+button:hover {
+  cursor: pointer;
+  color: #2549d3;
+  background: #fafafa;
+}
 nav .navbar__toggler .bar {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background: #ffffff;
+  background: #2549d3;
   border-radius: 10%;
   transition: 0.4s;
 }
-input {
+#nav__container input {
   display: none;
 }
 
-input:checked ~ nav .navbar__list {
+#nav__container input:checked ~ nav .navbar__content {
   transform: translateY(0);
 }
 
-input:checked ~ nav .navbar__toggler {
+#nav__container input:checked ~ nav .navbar__toggler {
   margin-top: 35px;
 }
-input:checked ~ nav .navbar__toggler .bar:nth-child(1) {
+#nav__container input:checked ~ nav .navbar__toggler .bar:nth-child(1) {
   position: absolute;
   transform: rotate(45deg);
 }
 
-input:checked ~ nav .navbar__toggler .bar:nth-child(2) {
+#nav__container input:checked ~ nav .navbar__toggler .bar:nth-child(2) {
   display: none;
 }
-input:checked ~ nav .navbar__toggler .bar:nth-child(3) {
+#nav__container input:checked ~ nav .navbar__toggler .bar:nth-child(3) {
   transform: rotate(-45deg);
 }
 /* Media Queries */
@@ -89,9 +113,13 @@ input:checked ~ nav .navbar__toggler .bar:nth-child(3) {
 
 @media (max-width: 675px) {
   nav .navbar__list {
+    display: block;
+  }
+  nav .navbar__content {
     display: grid;
+    justify-content: center;
     position: absolute;
-    background: #404040;
+    background: #fafafa;
     width: 100%;
     top: 75px;
     left: 0;
@@ -99,6 +127,7 @@ input:checked ~ nav .navbar__toggler .bar:nth-child(3) {
     z-index: -1;
     transition: 0.6s;
   }
+
   nav .navbar__list .navbar__list-item {
     padding-left: 35px;
   }
