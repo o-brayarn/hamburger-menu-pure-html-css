@@ -77,3 +77,33 @@ input:checked ~ nav .navbar__toggler .bar:nth-child(2) {
 input:checked ~ nav .navbar__toggler .bar:nth-child(3) {
   transform: rotate(-45deg);
 }
+/* Media Queries */
+@media (max-width: 935px) {
+  nav {
+    padding: 0 2rem;
+  }
+  nav .navbar__list .navbar__list-item {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 675px) {
+  nav .navbar__list {
+    display: grid;
+    position: absolute;
+    background: #404040;
+    width: 100%;
+    top: 75px;
+    left: 0;
+    transform: translateY(-100%);
+    z-index: -1;
+    transition: 0.6s;
+  }
+  nav .navbar__list .navbar__list-item {
+    padding-left: 35px;
+  }
+
+  nav .navbar__toggler {
+    display: grid !important;
+  }
+}
